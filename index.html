@@ -7,18 +7,26 @@
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Animate.css for smooth animations -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
 
   <!-- Internal CSS -->
   <style>
     body {
       font-family: 'Arial', sans-serif;
+      scroll-behavior: smooth;
     }
     h1, h2 {
       font-weight: bold;
     }
     .profile-img {
-      width: 100%;
-      max-width: 250px;
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
       border-radius: 50%;
       border: 5px solid #0d6efd;
       margin-bottom: 20px;
@@ -41,6 +49,9 @@
     }
     section {
       padding: 60px 0;
+    }
+    .nav-link {
+      cursor: pointer;
     }
   </style>
 </head>
@@ -66,9 +77,9 @@
 </nav>
 
 <!-- Hero Section -->
-<header class="bg-light text-center" style="padding-top: 100px; padding-bottom: 60px;">
-  <div class="container">
-    <img src="https://via.placeholder.com/250" alt="Profile Picture" class="profile-img">
+<header class="bg-light text-center" style="padding-top: 120px; padding-bottom: 60px;">
+  <div class="container animate__animated animate__fadeInDown">
+    <img src="https://via.placeholder.com/180" alt="Profile Picture" class="profile-img">
     <h1 class="mt-3">Md Nafiul Bari</h1>
     <p class="lead">Junior Electrical Engineer | Power Systems | IoT | Embedded Systems</p>
     <a href="Profile.pdf" class="btn btn-custom mt-3" download>Download Resume</a>
@@ -78,19 +89,19 @@
 <!-- About Section -->
 <section id="about" class="container">
   <div class="row align-items-center">
-    <div class="col-md-6">
+    <div class="col-md-6 animate__animated animate__fadeInLeft">
       <img src="https://via.placeholder.com/250" alt="Profile" class="profile-img d-block mx-auto">
     </div>
-    <div class="col-md-6">
+    <div class="col-md-6 animate__animated animate__fadeInRight">
       <h2>About Me</h2>
-      <p>I hold a B.Sc. degree in Electrical and Electronic Engineering from AIUB and currently work as a Junior Engineer at Sanyo Engineering & Construction Inc. I am passionate about innovation in Power Systems, Smart Grids, Renewable Energy, VLSI, Embedded Systems, Robotics, and IoT technologies.</p>
+      <p>I am a passionate Electrical Engineer, graduated from AIUB, working at Sanyo Engineering & Construction Inc. My focus areas include Power Systems, Smart Grids, Renewable Energy, VLSI, IoT, Robotics, and Embedded Systems.</p>
     </div>
   </div>
 </section>
 
 <!-- Experience Section -->
 <section id="experience" class="bg-light">
-  <div class="container">
+  <div class="container animate__animated animate__fadeInUp">
     <h2 class="text-center">Experience</h2>
     <ul>
       <li><strong>Sanyo Engineering & Construction Inc.</strong> - Junior Engineer (Sep 2023 - Present)</li>
@@ -103,7 +114,7 @@
 
 <!-- Education Section -->
 <section id="education">
-  <div class="container">
+  <div class="container animate__animated animate__fadeInUp">
     <h2 class="text-center">Education</h2>
     <ul>
       <li><strong>American International University-Bangladesh</strong> - B.Sc. in EEE (2019 - 2023)</li>
@@ -115,20 +126,20 @@
 
 <!-- Skills Section -->
 <section id="skills" class="bg-light">
-  <div class="container">
+  <div class="container animate__animated animate__fadeInUp">
     <h2 class="text-center">Skills & Certifications</h2>
-    <p class="text-center"><strong>Skills:</strong> Electrical Safety Knowledge, Fire Hazard Response, Fall Prevention Techniques</p>
-    <p class="text-center"><strong>Certifications:</strong> Arduino Interfacing, CCNA Introduction to Networks, Basic Safety Training, Python Programming, C Programming</p>
+    <p class="text-center"><strong>Skills:</strong> Electrical Safety, Fire Hazard Response, Fall Prevention Techniques</p>
+    <p class="text-center"><strong>Certifications:</strong> Arduino Interfacing, CCNA, Basic Safety Training, Python Programming, C Programming</p>
   </div>
 </section>
 
 <!-- Contact Section -->
 <section id="contact">
-  <div class="container">
+  <div class="container animate__animated animate__fadeInUp">
     <h2 class="text-center">Contact Me</h2>
     <p class="text-center"><strong>Phone:</strong> +8801729519179</p>
     <p class="text-center"><strong>Email:</strong> <a href="mailto:mdnafiulbari@gmail.com">mdnafiulbari@gmail.com</a></p>
-    <p class="text-center"><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/mdnafiulbari" target="_blank">Visit My Profile</a></p>
+    <p class="text-center"><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/mdnafiulbari" target="_blank">Visit Profile</a></p>
   </div>
 </section>
 
@@ -141,5 +152,18 @@
 
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- jQuery Scroll Animation -->
+<script>
+  $(document).ready(function(){
+    $(".nav-link").click(function(e){
+      e.preventDefault();
+      var target = $(this).attr("href");
+      $('html, body').animate({
+        scrollTop: $(target).offset().top - 70
+      }, 1000);
+    });
+  });
+</script>
 </body>
 </html>
